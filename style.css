@@ -1,0 +1,114 @@
+/* 基础页面重置与布局 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #eef2f7; /* 柔和的浅灰蓝背景 */
+}
+
+/* 顶部区域 */
+header {
+  background-color: #5a8df0;
+  color: #fff;
+  padding: 30px 16px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.welcome {
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* 主内容区 - 窄屏居中限制 */
+main {
+  max-width: 600px; /* 限制最大宽度，使窄屏体验更好 */
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.encyclopedia h2 {
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  text-align: center;
+  color: #2c3e50;
+}
+
+/* 名片 (Card) 样式 */
+.breed-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.breed-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.breed-card img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 16px;
+  background-color: #f8fafc;
+  border-radius: 50%; /* 圆形图片背景，更像名片 */
+  padding: 10px;
+}
+
+.breed-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #5a8df0;
+}
+
+/* 介绍信息排版 */
+.breed-info {
+  width: 100%;
+  text-align: left;
+}
+
+.breed-info p {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.breed-info strong {
+  color: #555;
+}
+
+/* 底部 */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* 窄屏适配优化 */
+@media (max-width: 600px) {
+  header h1 { font-size: 1.6rem; }
+  .welcome { font-size: 0.95rem; }
+  .encyclopedia h2 { font-size: 1.3rem; }
+  .breed-card { padding: 16px; }
+  .breed-card img { width: 120px; height: 120px; }
+}

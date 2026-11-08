@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" width="240" height="180">
+  <title>Poodle Illustration</title>
+  <desc>A simple cartoon Poodle with curly fur pom-poms and an elegant shape.</desc>
+
+  <!-- Ground -->
+  <ellipse cx="120" cy="160" rx="90" ry="10" fill="#d9e6ff"/>
+
+  <!-- Tail -->
+  <path d="M185 105 Q200 90 195 78" stroke="#444" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <circle cx="196" cy="78" r="6" fill="#ffffff"/>
+
+  <!-- Body -->
+  <ellipse cx="120" cy="115" rx="62" ry="32" fill="#555"/>
+
+  <!-- Curly chest pom-pom -->
+  <circle cx="90" cy="120" r="14" fill="#ffffff"/>
+  <circle cx="98" cy="114" r="10" fill="#ffffff"/>
+  <circle cx="84" cy="112" r="9" fill="#ffffff"/>
+
+  <!-- Back leg -->
+  <rect x="150" y="132" width="12" height="24" rx="6" fill="#555"/>
+  <circle cx="156" cy="158" r="7" fill="#ffffff"/>
+
+  <!-- Front leg -->
+  <rect x="85" y="132" width="12" height="24" rx="6" fill="#555"/>
+  <circle cx="91" cy="158" r="7" fill="#ffffff"/>
+
+  <!-- Head -->
+  <circle cx="70" cy="88" r="28" fill="#555"/>
+
+  <!-- Top knot pom-pom -->
+  <circle cx="70" cy="62" r="12" fill="#ffffff"/>
+  <circle cx="63" cy="66" r="9" fill="#ffffff"/>
+  <circle cx="77" cy="66" r="9" fill="#ffffff"/>
+
+  <!-- Muzzle -->
+  <ellipse cx="52" cy="96" rx="18" ry="12" fill="#666"/>
+
+  <!-- Nose -->
+  <ellipse cx="40" cy="94" rx="6" ry="5" fill="#222"/>
+
+  <!-- Eye -->
+  <circle cx="64" cy="84" r="4" fill="#222"/>
+
+  <!-- Ear -->
+  <ellipse cx="86" cy="100" rx="12" ry="20" fill="#444" transform="rotate(-8 86 100)"/>
+
+  <!-- Collar -->
+  <path d="M52 110 Q70 122 88 110" stroke="#e63946" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <circle cx="70" cy="118" r="3.5" fill="#ffd166"/>
+</svg>

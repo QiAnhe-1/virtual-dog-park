@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Dog Park</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Virtual Dog Park</h1>
+    <p class="welcome">Welcome to the Virtual Dog Park! Explore three friendly dog breeds and learn about their size, personality, and everyday care.</p>
+  </header>
+
+  <main>
+    <section class="encyclopedia">
+      <h2>Dog Encyclopedia</h2>
+
+      <article class="breed-card">
+        <img src="assets/beagle.svg" alt="Illustration of a Beagle" width="240" height="180">
+        <h3>Beagle</h3>
+        <p><strong>Size:</strong> Small to medium, about 33–41 cm tall and 8–14 kg.</p>
+        <p><strong>Personality:</strong> Friendly, curious, and social. Beagles love people, sniffing around, and exploring new smells.</p>
+        <p><strong>Everyday Care:</strong> Give them daily walks, keep them on a leash outside, brush their short coat once a week, and clean their floppy ears regularly.</p>
+      </article>
+
+      <!-- 将原本的 <p><strong>...</strong></p> 包裹在 <div class="breed-info"> 中 -->
+        <article class="breed-card">
+          <img src="assets/beagle.svg" alt="Illustration of a Beagle">
+          <h3>Beagle</h3>
+          <div class="breed-info">
+            <p><strong>Size:</strong> Small to medium, about 33–41 cm tall and 8–14 kg.</p>
+            <p><strong>Personality:</strong> Friendly, curious, and social. Beagles love people, sniffing around, and exploring new smells.</p>
+            <p><strong>Everyday Care:</strong> Give them daily walks, keep them on a leash outside, brush their short coat once a week, and clean their floppy ears regularly.</p>
+          </div>
+        </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Virtual Dog Park</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
