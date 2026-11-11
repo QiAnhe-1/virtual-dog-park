@@ -1,3 +1,9 @@
+/* ==========================================================
+   Virtual Dog Park – style.css
+   温馨卡通主题 + 表情反馈 + 互动动画（烟花 / 饼干雨 / 毛绒球雨 / 日月交替）
+   仅新增视觉表现，不改变任何原有功能逻辑
+   ========================================================== */
+
 /* ===== Reset and base styles ===== */
 * {
     margin: 0;
@@ -5,41 +11,110 @@
     box-sizing: border-box;
 }
 
+/* ---------- 温馨卡通背景板 ---------- */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Comic Sans MS", "Chalkboard SE", "Segoe UI",
+                 -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
+    color: #5b4a45;
     padding: 1rem;
+    min-height: 100vh;
+
+    /* 多层柔和渐变：天空粉 → 奶油黄 → 草地绿，仿卡通花园 */
+    background-color: #fff6f0;
+    background-image:
+        radial-gradient(circle at 12% 18%, rgba(255, 214, 232, 0.85) 0%, rgba(255, 214, 232, 0) 45%),
+        radial-gradient(circle at 88% 12%, rgba(255, 240, 200, 0.9) 0%, rgba(255, 240, 200, 0) 40%),
+        radial-gradient(circle at 78% 82%, rgba(214, 240, 214, 0.85) 0%, rgba(214, 240, 214, 0) 45%),
+        radial-gradient(circle at 18% 88%, rgba(226, 214, 255, 0.8) 0%, rgba(226, 214, 255, 0) 45%),
+        linear-gradient(160deg, #ffeef5 0%, #fff8e7 45%, #f0f9ec 100%);
+    background-attachment: fixed;
 }
 
+/* 背景上的星星与花朵点缀（纯装饰，不影响交互） */
+body::before {
+    content: "✿  ✦  ❀  ✧  ✿  ✦  ❀  ✧  ✿  ✦  ❀  ✧  ✿  ✦  ❀  ✧";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    pointer-events: none;
+    font-size: 1.4rem;
+    letter-spacing: 2.2rem;
+    line-height: 3.4rem;
+    color: rgba(255, 160, 190, 0.45);
+    text-shadow: 0 0 10px rgba(255, 200, 220, 0.6);
+    white-space: nowrap;
+    overflow: hidden;
+    animation: twinkle 4s ease-in-out infinite;
+}
+
+body::after {
+    content: "✧  ❀  ✦  ✿  ✧  ❀  ✦  ✿  ✧  ❀  ✦  ✿  ✧  ❀  ✦  ✿";
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    pointer-events: none;
+    font-size: 1.4rem;
+    letter-spacing: 2.4rem;
+    line-height: 3.4rem;
+    color: rgba(180, 200, 255, 0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    animation: twinkle 5s ease-in-out infinite reverse;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.55; }
+    50%      { opacity: 1; }
+}
+
+/* ---------- 页头 ---------- */
 header {
+    position: relative;
+    z-index: 1;
     text-align: center;
     margin-bottom: 2rem;
-    padding: 1rem 0;
+    padding: 1.2rem 1rem;
+    background: rgba(255, 255, 255, 0.6);
+    border: 3px dashed #ffc9d9;
+    border-radius: 24px;
+    box-shadow: 0 4px 14px rgba(255, 170, 195, 0.25);
 }
 
 header h1 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.9rem;
+    margin-bottom: 0.4rem;
+    color: #e8809f;
+    text-shadow: 2px 2px 0 #fff0f5;
 }
 
 header p {
     font-size: 1rem;
-    color: #555;
+    color: #a08078;
 }
 
 main {
+    position: relative;
+    z-index: 1;
     max-width: 1060px;
     margin: 0 auto;
 }
 
-/* ===== Encyclopedia section ===== */
-#encyclopedia h2 {
+/* ===== 图鉴区块 ===== */
+#encyclopedia h2,
+#adoption h2 {
     text-align: center;
     margin-bottom: 1.5rem;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    color: #e8809f;
 }
+
+#encyclopedia h2::before { content: "🐾 "; }
+#encyclopedia h2::after  { content: " 🐾"; }
 
 .breed-cards {
     display: flex;
@@ -49,13 +124,20 @@ main {
 }
 
 .breed-card {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.92);
+    border: 3px solid #ffe0ea;
+    border-radius: 22px;
+    box-shadow: 0 4px 12px rgba(255, 170, 195, 0.22);
     padding: 1.5rem;
     width: 100%;
     max-width: 320px;
     text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.breed-card:hover {
+    transform: translateY(-6px) rotate(-1deg);
+    box-shadow: 0 10px 22px rgba(255, 150, 180, 0.35);
 }
 
 .breed-card img {
@@ -69,6 +151,7 @@ main {
 .breed-card h3 {
     font-size: 1.3rem;
     margin-bottom: 0.75rem;
+    color: #d9738f;
 }
 
 .breed-card ul {
@@ -81,25 +164,25 @@ main {
     margin-bottom: 0.5rem;
 }
 
-/* ===== Adoption section ===== */
+/* ===== 领养区块 ===== */
 #adoption {
     margin-top: 3rem;
 }
 
-#adoption h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-}
+#adoption h2::before { content: "🌸 "; }
+#adoption h2::after  { content: " 🌸"; }
 
-#adoption-form {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    padding: 1.5rem;
-    max-width: 420px;
+#adoption-form,
+.status-card {
+    background: rgba(255, 255, 255, 0.94);
+    border: 3px solid #ffe0ea;
+    border-radius: 24px;
+    box-shadow: 0 6px 18px rgba(255, 170, 195, 0.28);
+    padding: 1.6rem;
+    max-width: 440px;
     margin: 0 auto;
     text-align: center;
+    position: relative;
 }
 
 #adoption-form p {
@@ -109,64 +192,77 @@ main {
 #adoption-form label {
     display: block;
     text-align: left;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 0.3rem;
     margin-top: 0.8rem;
+    color: #c96a86;
 }
 
 #adoption-form select,
 #adoption-form input {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.55rem;
     font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    font-family: inherit;
+    color: #5b4a45;
+    border: 2px solid #ffd3e0;
+    border-radius: 14px;
+    background: #fffafc;
+}
+
+#adoption-form select:focus,
+#adoption-form input:focus {
+    outline: none;
+    border-color: #ff9fbc;
+    box-shadow: 0 0 0 4px rgba(255, 159, 188, 0.2);
 }
 
 .error-message {
-    color: #d32f2f;
+    color: #e05252;
     font-size: 0.9rem;
     min-height: 1.2em;
     margin-top: 0.5rem;
     text-align: left;
 }
 
+/* ---------- 通用按钮 ---------- */
+button {
+    font-family: inherit;
+    font-weight: 700;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+button:hover  { transform: translateY(-2px) scale(1.04); filter: brightness(1.06); }
+button:active { transform: translateY(1px) scale(0.97); }
+
 #adopt-btn {
     margin-top: 1rem;
-    padding: 0.6rem 2rem;
-    font-size: 1rem;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    padding: 0.65rem 2.2rem;
+    font-size: 1.05rem;
+    color: #fff;
+    background: linear-gradient(135deg, #7ed491, #4caf50);
+    box-shadow: 0 4px 0 #3d8b40;
 }
 
-#adopt-btn:hover {
-    background-color: #388e3c;
-}
-
-/* ===== Dog status panel ===== */
-.status-card {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    padding: 1.5rem;
-    max-width: 420px;
-    margin: 0 auto;
-    text-align: center;
-}
-
+/* ===== 狗狗状态卡 ===== */
 .status-card img {
-    width: 160px;
-    height: 160px;
     object-fit: contain;
     margin-bottom: 1rem;
+    transition: width 0.4s ease, height 0.4s ease;
 }
 
+/* 成长可视化：随阶段变大的狗狗插图 */
+.dog-img-puppy { width: 80px;  height: 80px;  }
+.dog-img-young { width: 120px; height: 120px; }
+.dog-img-adult { width: 160px; height: 160px; }
+
 .status-card h3 {
-    font-size: 1.4rem;
+    font-size: 1.45rem;
     margin-bottom: 0.75rem;
+    color: #d9738f;
 }
 
 .status-card ul {
@@ -180,7 +276,90 @@ main {
     margin-bottom: 0.4rem;
 }
 
+/* ---------- 彩带花环装饰 ---------- */
+.garland {
+    position: absolute;
+    top: 10px;
+    font-size: 1.2rem;
+    letter-spacing: 0.3rem;
+    z-index: 2;
+    pointer-events: none;
+    animation: garlandSway 3s ease-in-out infinite;
+}
+
+.garland-left {
+    left: -10px;
+    transform-origin: left center;
+}
+
+.garland-right {
+    right: -10px;
+    transform-origin: right center;
+}
+
+@keyframes garlandSway {
+    0%, 100% { transform: rotate(-3deg); }
+    50%      { transform: rotate(3deg); }
+}
+
+/* ---------- 太阳装饰（用于昼夜交替） ---------- */
+.sun-decor {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 2rem;
+    z-index: 3;
+    pointer-events: none;
+    filter: drop-shadow(0 0 8px rgba(255, 200, 50, 0.8));
+    animation: sunPulse 3s ease-in-out infinite;
+    transition: transform 1.5s ease, opacity 1.5s ease;
+}
+
+@keyframes sunPulse {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50%      { transform: scale(1.1) rotate(10deg); }
+}
+
+/* 夜晚状态：太阳变成月亮并移到右侧 */
+.sun-decor.night {
+    transform: translateX(calc(100% + 350px)) rotate(180deg);
+    opacity: 0.8;
+}
+
+/* ---------- 成长进度条 ---------- */
+.growth-visual {
+    margin: 1rem 0;
+    text-align: left;
+}
+
+.growth-visual label {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+    color: #c96a86;
+}
+
+.growth-bar-container {
+    width: 100%;
+    height: 22px;
+    background: #f3e2e8;
+    border: 2px solid #ffd3e0;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.growth-bar-fill {
+    height: 100%;
+    width: 33%;
+    background: linear-gradient(90deg, #ffd166, #8bc34a);
+    border-radius: 999px;
+    transition: width 0.4s ease;
+}
+
+/* ---------- 操作按钮区 ---------- */
 .action-buttons {
+    position: relative;          /* 烟花定位的参照容器 */
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem;
@@ -189,73 +368,200 @@ main {
 }
 
 .action-buttons button {
-    padding: 0.5rem 1.2rem;
+    position: relative;
+    padding: 0.55rem 1.3rem;
     font-size: 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    color: white;
+    color: #fff;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.18);
 }
 
-#feed-btn {
-    background-color: #ff9800;
+#feed-btn      { background: linear-gradient(135deg, #ffb75e, #ff9800); }
+#play-btn      { background: linear-gradient(135deg, #6ec6ff, #2196f3); }
+#next-day-btn  { background: linear-gradient(135deg, #c77dff, #9c27b0); }
+
+/* ---------- 快乐表情 ---------- */
+#dog-happiness {
+    font-weight: 700;
+    color: #d9738f;
 }
 
-#feed-btn:hover {
-    background-color: #f57c00;
+.mood-face {
+    display: inline-block;
+    margin-left: 0.35rem;
+    font-size: 1.15rem;
+    animation: moodBounce 1.6s ease-in-out infinite;
 }
 
-#play-btn {
-    background-color: #2196f3;
+@keyframes moodFaceBounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50%      { transform: translateY(-4px) scale(1.15); }
 }
 
-#play-btn:hover {
-    background-color: #1976d2;
-}
-
-#next-day-btn {
-    background-color: #9c27b0;
-}
-
-#next-day-btn:hover {
-    background-color: #7b1fa2;
-}
-
+/* ---------- 提示语 ---------- */
 .action-message {
     margin-top: 0.8rem;
     font-size: 0.95rem;
-    color: #555;
+    color: #a08078;
     min-height: 1.2em;
 }
 
-/* ===== Utility ===== */
+#restart-btn {
+    margin-top: 1.5rem;
+    padding: 0.5rem 1.3rem;
+    font-size: 0.9rem;
+    color: #fff;
+    background: linear-gradient(135deg, #ff8a80, #f44336);
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.18);
+}
+
+/* ==========================================================
+   动画层：烟花 / 饼干雨 / 毛绒球雨 / 日月交替
+   全部由 JS 动态创建，动画结束后自动移除
+   ========================================================== */
+
+/* ---------- 烟花粒子 ---------- */
+.firework-particle {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+    font-size: 1.1rem;
+    line-height: 1;
+    animation: fireworkBurst 0.85s ease-out forwards;
+}
+
+@keyframes fireworkBurst {
+    0% {
+        transform: translate(0, 0) scale(0.4) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--dx), var(--dy)) scale(1.3) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ---------- 掉落雨（饼干 / 毛绒球） ---------- */
+.rain-item {
+    position: fixed;
+    top: -60px;
+    z-index: 9998;
+    pointer-events: none;
+    line-height: 1;
+    animation: rainFall linear forwards;
+}
+
+@keyframes rainFall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% {
+        transform: translateY(110vh) rotate(540deg);
+        opacity: 0;
+    }
+}
+
+/* ---------- 日月交替遮罩 ---------- */
+.day-night-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9997;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #8ec5ff 0%, #ffe9c7 100%);
+    animation: skyCycle 2.4s ease-in-out forwards;
+}
+
+@keyframes skyCycle {
+    0%   { opacity: 0; }
+    20%  { opacity: 1; }
+    50%  { opacity: 1; background: linear-gradient(180deg, #2b2d5e 0%, #4a3b78 100%); }
+    80%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* 太阳与月亮 */
+.sun-moon {
+    position: absolute;
+    font-size: 4.5rem;
+    line-height: 1;
+    filter: drop-shadow(0 0 18px rgba(255, 220, 120, 0.9));
+}
+
+.sun {
+    animation: sunArc 2.4s ease-in-out forwards;
+}
+
+.moon {
+    animation: moonArc 2.4s ease-in-out forwards;
+    filter: drop-shadow(0 0 18px rgba(200, 210, 255, 0.9));
+}
+
+@keyframes sunArc {
+    0%   { transform: translate(-140px, 60px) scale(0.6); opacity: 0; }
+    25%  { transform: translate(-40px, -30px) scale(1);   opacity: 1; }
+    55%  { transform: translate(60px, 20px) scale(0.9);   opacity: 0.9; }
+    100% { transform: translate(150px, 80px) scale(0.5);  opacity: 0; }
+}
+
+@keyframes moonArc {
+    0%   { transform: translate(140px, 80px) scale(0.5);  opacity: 0; }
+    45%  { transform: translate(40px, -20px) scale(1);    opacity: 0; }
+    65%  { transform: translate(-20px, -35px) scale(1);   opacity: 1; }
+    100% { transform: translate(-140px, 70px) scale(0.6); opacity: 0; }
+}
+
+/* 交替时的星星闪烁 */
+.cycle-star {
+    position: absolute;
+    font-size: 1.3rem;
+    color: #fff;
+    animation: twinkle 1.2s ease-in-out infinite;
+}
+
+/* ===== 工具类 ===== */
 .hidden {
     display: none;
 }
 
-/* ===== Responsive adjustments ===== */
+/* ===== 响应式 ===== */
 @media (max-width: 600px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
+    header h1 { font-size: 1.5rem; }
 
-    .breed-card {
-        padding: 1rem;
-    }
-
-    .breed-card h3 {
+    body::before,
+    body::after {
+        letter-spacing: 1.2rem;
         font-size: 1.1rem;
     }
 
-    .breed-card ul {
+    .breed-card { padding: 1rem; }
+    .breed-card h3 { font-size: 1.1rem; }
+    .breed-card ul { font-size: 0.9rem; }
+
+    .action-buttons { flex-direction: column; }
+    .action-buttons button { width: 100%; }
+    
+    .garland {
         font-size: 0.9rem;
+        letter-spacing: 0.2rem;
     }
-
-    .action-buttons {
-        flex-direction: column;
+    
+    .sun-decor {
+        font-size: 1.5rem;
+        top: 10px;
+        left: 10px;
     }
+}
 
-    .action-buttons button {
-        width: 100%;
+/* 尊重系统"减少动态效果"设置 */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }

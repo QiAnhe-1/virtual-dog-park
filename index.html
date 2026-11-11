@@ -49,7 +49,7 @@
             </div>
         </section>
 
-        <!-- ===== Round 2: Virtual Dog Adoption & Care ===== -->
+        <!-- ===== Round 2 & 3: Virtual Dog Adoption, Care & Persistence ===== -->
         <section id="adoption">
             <h2>My Virtual Dog</h2>
 
@@ -75,7 +75,15 @@
             <!-- Dog status panel (visible after adopting) -->
             <div id="dog-status" class="hidden">
                 <div class="status-card">
+                    <!-- 彩带花环装饰 -->
+                    <div class="garland garland-left">🎀 🌸 🎀 🌸 🎀</div>
+                    <div class="garland garland-right">🌸 🎀 🌸 🎀 🌸</div>
+                    
+                    <!-- 太阳（用于昼夜交替） -->
+                    <div class="sun-decor" id="sun-decor">☀️</div>
+                    
                     <img id="dog-image" src="" alt="">
+                    
                     <h3 id="dog-name-display"></h3>
                     <ul>
                         <li><strong>Breed:</strong> <span id="dog-breed"></span></li>
@@ -84,6 +92,14 @@
                         <li><strong>Happiness:</strong> <span id="dog-happiness"></span> / 100</li>
                     </ul>
 
+                    <!-- Growth Visualization -->
+                    <div class="growth-visual">
+                        <label for="growth-bar">Growth Progress:</label>
+                        <div class="growth-bar-container" id="growth-bar">
+                            <div class="growth-bar-fill"></div>
+                        </div>
+                    </div>
+
                     <div class="action-buttons">
                         <button id="feed-btn">🍖 Feed</button>
                         <button id="play-btn">🎾 Play</button>
@@ -91,6 +107,8 @@
                     </div>
 
                     <p id="action-message" class="action-message"></p>
+
+                    <button id="restart-btn">🔄 Start Over</button>
                 </div>
             </div>
         </section>
