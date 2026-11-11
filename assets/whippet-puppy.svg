@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240">
+  <circle cx="100" cy="120" r="90" fill="#E8E8E8" />
+  <path d="M130 130 Q170 50 140 60" stroke="#D3D3D3" stroke-width="4" fill="none" stroke="#222222" />
+  <path d="M75 125 Q110 115 135 125 Q140 140 100 145 Q60 140 75 125 Z" fill="#FFFFFF" stroke="#222222" stroke-width="3" />
+  <path d="M130 135 L145 190" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" />
+  <path d="M80 140 L80 200" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" />
+  <path d="M105 140 L105 190" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" />
+  <ellipse cx="75" cy="100" rx="40" ry="25" fill="#FFFFFF" stroke="#222222" stroke-width="3" transform="rotate(-10 75 100)" />
+  <path d="M90 85 Q80 60 100 75 Z" fill="#FFFFFF" stroke="#222222" stroke-width="2" />
+  <path d="M60 90 Q40 80 55 100 Z" fill="#FFFFFF" stroke="#222222" stroke-width="2" />
+  <circle cx="60" cy="95" r="5" fill="#A8DADC" />
+  <circle cx="58" cy="93" r="1.5" fill="#FFFFFF" />
+  <circle cx="80" cy="92" r="5" fill="#A8DADC" />
+  <circle cx="78" cy="90" r="1.5" fill="#FFFFFF" />
+  <ellipse cx="40" cy="105" rx="4" ry="6" fill="#222222" transform="rotate(-10 40 105)" />
+  <path d="M40 112 Q50 115 55 110" stroke="#222222" stroke-width="2" fill="none" stroke-linecap="round" />
+</svg>

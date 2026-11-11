@@ -1,44 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" width="240" height="180">
-  <title>Beagle Illustration</title>
-  <desc>A simple cartoon Beagle with floppy ears and a short coat.</desc>
-
-  <!-- Ground -->
-  <ellipse cx="120" cy="160" rx="90" ry="10" fill="#d9e6ff"/>
-
-  <!-- Tail -->
-  <path d="M185 110 Q200 90 195 80" stroke="#8b5e3c" stroke-width="6" stroke-linecap="round" fill="none"/>
-  <circle cx="195" cy="80" r="5" fill="#ffffff"/>
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Illustration of a Beagle">
+  <rect width="200" height="200" fill="#fff8e1"/>
   <!-- Body -->
-  <ellipse cx="120" cy="120" rx="65" ry="35" fill="#d6a47a"/>
-
-  <!-- White belly -->
-  <ellipse cx="115" cy="132" rx="40" ry="18" fill="#fff4e6"/>
-
-  <!-- Back leg -->
-  <rect x="145" y="135" width="12" height="22" rx="6" fill="#d6a47a"/>
-  <rect x="145" y="150" width="12" height="8" rx="4" fill="#8b5e3c"/>
-
-  <!-- Front leg -->
-  <rect x="85" y="135" width="12" height="22" rx="6" fill="#d6a47a"/>
-  <rect x="85" y="150" width="12" height="8" rx="4" fill="#8b5e3c"/>
-
+  <ellipse cx="100" cy="140" rx="50" ry="35" fill="#d2a679"/>
   <!-- Head -->
-  <circle cx="70" cy="95" r="30" fill="#d6a47a"/>
-
-  <!-- White muzzle -->
-  <ellipse cx="55" cy="105" rx="18" ry="14" fill="#fff4e6"/>
-
+  <circle cx="100" cy="90" r="35" fill="#d2a679"/>
+  <!-- Ears -->
+  <ellipse cx="70" cy="95" rx="15" ry="25" fill="#8b5e3c"/>
+  <ellipse cx="130" cy="95" rx="15" ry="25" fill="#8b5e3c"/>
+  <!-- Face patch -->
+  <circle cx="100" cy="95" r="20" fill="#fff"/>
+  <!-- Eyes -->
+  <circle cx="92" cy="88" r="3" fill="#333"/>
+  <circle cx="108" cy="88" r="3" fill="#333"/>
   <!-- Nose -->
-  <ellipse cx="42" cy="102" rx="6" ry="5" fill="#222"/>
-
-  <!-- Eye -->
-  <circle cx="65" cy="90" r="4" fill="#222"/>
-
-  <!-- Left ear -->
-  <ellipse cx="85" cy="110" rx="14" ry="22" fill="#8b5e3c" transform="rotate(-10 85 110)"/>
-
-  <!-- Collar -->
-  <path d="M50 118 Q70 130 90 118" stroke="#e63946" stroke-width="5" stroke-linecap="round" fill="none"/>
-  <circle cx="70" cy="126" r="4" fill="#ffd166"/>
+  <circle cx="100" cy="98" r="4" fill="#333"/>
+  <!-- Tail -->
+  <path d="M145 130 Q160 110 155 100" stroke="#8b5e3c" stroke-width="6" fill="none" stroke-linecap="round"/>
 </svg>

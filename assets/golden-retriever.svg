@@ -1,46 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" width="240" height="180">
-  <title>Golden Retriever Illustration</title>
-  <desc>A simple cartoon Golden Retriever with a golden coat and friendly face.</desc>
-
-  <!-- Ground -->
-  <ellipse cx="120" cy="160" rx="95" ry="10" fill="#d9e6ff"/>
-
-  <!-- Tail -->
-  <path d="M190 110 Q210 95 205 80" stroke="#d4a04b" stroke-width="8" stroke-linecap="round" fill="none"/>
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Illustration of a Golden Retriever">
+  <rect width="200" height="200" fill="#fffde7"/>
   <!-- Body -->
-  <ellipse cx="125" cy="115" rx="70" ry="38" fill="#e8b960"/>
-
-  <!-- Chest fur -->
-  <ellipse cx="95" cy="125" rx="30" ry="18" fill="#f5d89a"/>
-
-  <!-- Back leg -->
-  <rect x="155" y="135" width="14" height="24" rx="7" fill="#e8b960"/>
-  <rect x="155" y="152" width="14" height="8" rx="4" fill="#d4a04b"/>
-
-  <!-- Front leg -->
-  <rect x="85" y="135" width="14" height="24" rx="7" fill="#e8b960"/>
-  <rect x="85" y="152" width="14" height="8" rx="4" fill="#d4a04b"/>
-
+  <ellipse cx="100" cy="145" rx="55" ry="38" fill="#f0c75e"/>
   <!-- Head -->
-  <circle cx="70" cy="90" r="32" fill="#e8b960"/>
-
+  <circle cx="100" cy="85" r="38" fill="#f0c75e"/>
+  <!-- Ears -->
+  <ellipse cx="68" cy="90" rx="14" ry="22" fill="#d4a843"/>
+  <ellipse cx="132" cy="90" rx="14" ry="22" fill="#d4a843"/>
   <!-- Muzzle -->
-  <ellipse cx="52" cy="100" rx="20" ry="15" fill="#f5d89a"/>
-
+  <ellipse cx="100" cy="98" rx="18" ry="12" fill="#fceeb5"/>
+  <!-- Eyes -->
+  <circle cx="90" cy="82" r="3.5" fill="#333"/>
+  <circle cx="110" cy="82" r="3.5" fill="#333"/>
   <!-- Nose -->
-  <ellipse cx="38" cy="97" rx="7" ry="6" fill="#222"/>
-
-  <!-- Eye -->
-  <circle cx="62" cy="85" r="4.5" fill="#222"/>
-
-  <!-- Ear -->
-  <ellipse cx="85" cy="105" rx="15" ry="24" fill="#d4a04b" transform="rotate(-12 85 105)"/>
-
-  <!-- Friendly mouth -->
-  <path d="M40 108 Q48 114 56 108" stroke="#222" stroke-width="2" stroke-linecap="round" fill="none"/>
-
-  <!-- Collar -->
-  <path d="M50 115 Q70 128 90 115" stroke="#3a86ff" stroke-width="5" stroke-linecap="round" fill="none"/>
-  <circle cx="70" cy="124" r="4" fill="#ffd166"/>
+  <ellipse cx="100" cy="96" rx="5" ry="3.5" fill="#333"/>
+  <!-- Smile -->
+  <path d="M92 102 Q100 108 108 102" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Tail -->
+  <path d="M150 135 Q170 115 165 100" stroke="#d4a843" stroke-width="7" fill="none" stroke-linecap="round"/>
 </svg>
