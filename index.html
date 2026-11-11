@@ -1,46 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Virtual Dog Park</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Dog Park</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Virtual Dog Park</h1>
-    <p class="welcome">Welcome to the Virtual Dog Park! Explore three friendly dog breeds and learn about their size, personality, and everyday care.</p>
-  </header>
+    <header>
+        <h1>Welcome to the Virtual Dog Park</h1>
+        <p>Explore our dog encyclopedia and adopt your own virtual pet!</p>
+    </header>
 
-  <main>
-    <section class="encyclopedia">
-      <h2>Dog Encyclopedia</h2>
+    <main>
+        <!-- ===== Round 1: Encyclopedia (unchanged) ===== -->
+        <section id="encyclopedia">
+            <h2>Dog Encyclopedia</h2>
+            <div class="breed-cards">
+                <article class="breed-card">
+                    <img src="assets/beagle.svg" alt="Illustration of a Beagle">
+                    <h3>Beagle</h3>
+                    <ul>
+                        <li><strong>Size:</strong> Small to medium (9–16 kg)</li>
+                        <li><strong>Personality:</strong> Curious, friendly, and energetic</li>
+                        <li><strong>Care Notes:</strong> Needs daily walks and mental stimulation; prone to following scents, so keep on leash in open areas.</li>
+                    </ul>
+                </article>
 
-      <article class="breed-card">
-        <img src="assets/beagle.svg" alt="Illustration of a Beagle" width="240" height="180">
-        <h3>Beagle</h3>
-        <p><strong>Size:</strong> Small to medium, about 33–41 cm tall and 8–14 kg.</p>
-        <p><strong>Personality:</strong> Friendly, curious, and social. Beagles love people, sniffing around, and exploring new smells.</p>
-        <p><strong>Everyday Care:</strong> Give them daily walks, keep them on a leash outside, brush their short coat once a week, and clean their floppy ears regularly.</p>
-      </article>
+                <article class="breed-card">
+                    <img src="assets/golden-retriever.svg" alt="Illustration of a Golden Retriever">
+                    <h3>Golden Retriever</h3>
+                    <ul>
+                        <li><strong>Size:</strong> Large (25–34 kg)</li>
+                        <li><strong>Personality:</strong> Gentle, intelligent, and eager to please</li>
+                        <li><strong>Care Notes:</strong> Requires regular exercise and grooming; thrives with family interaction and positive training.</li>
+                    </ul>
+                </article>
 
-      <!-- 将原本的 <p><strong>...</strong></p> 包裹在 <div class="breed-info"> 中 -->
-        <article class="breed-card">
-          <img src="assets/beagle.svg" alt="Illustration of a Beagle">
-          <h3>Beagle</h3>
-          <div class="breed-info">
-            <p><strong>Size:</strong> Small to medium, about 33–41 cm tall and 8–14 kg.</p>
-            <p><strong>Personality:</strong> Friendly, curious, and social. Beagles love people, sniffing around, and exploring new smells.</p>
-            <p><strong>Everyday Care:</strong> Give them daily walks, keep them on a leash outside, brush their short coat once a week, and clean their floppy ears regularly.</p>
-          </div>
-        </article>
-    </section>
-  </main>
+                <article class="breed-card">
+                    <img src="assets/poodle.svg" alt="Illustration of a Poodle">
+                    <h3>Poodle</h3>
+                    <ul>
+                        <li><strong>Size:</strong> Toy, Miniature, or Standard (3–32 kg)</li>
+                        <li><strong>Personality:</strong> Alert, active, and highly trainable</li>
+                        <li><strong>Care Notes:</strong> Coat needs professional grooming every 4–6 weeks; benefits from puzzle toys and obedience training.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
 
-  <footer>
-    <p>&copy; 2026 Virtual Dog Park</p>
-  </footer>
+        <!-- ===== Round 2: Virtual Dog Adoption & Care ===== -->
+        <section id="adoption">
+            <h2>My Virtual Dog</h2>
 
-  <script src="script.js"></script>
+            <!-- Adoption form (visible before adopting) -->
+            <div id="adoption-form">
+                <p>Choose a breed and give your new dog a name!</p>
+
+                <label for="breed-select">Breed:</label>
+                <select id="breed-select">
+                    <option value="Beagle">Beagle</option>
+                    <option value="Golden Retriever">Golden Retriever</option>
+                    <option value="Poodle">Poodle</option>
+                </select>
+
+                <label for="dog-name-input">Dog Name:</label>
+                <input type="text" id="dog-name-input" maxlength="20" placeholder="Enter a name (max 20 chars)">
+
+                <p id="name-error" class="error-message" role="alert"></p>
+
+                <button id="adopt-btn">Adopt</button>
+            </div>
+
+            <!-- Dog status panel (visible after adopting) -->
+            <div id="dog-status" class="hidden">
+                <div class="status-card">
+                    <img id="dog-image" src="" alt="">
+                    <h3 id="dog-name-display"></h3>
+                    <ul>
+                        <li><strong>Breed:</strong> <span id="dog-breed"></span></li>
+                        <li><strong>Day:</strong> <span id="dog-day"></span></li>
+                        <li><strong>Stage:</strong> <span id="dog-stage"></span></li>
+                        <li><strong>Happiness:</strong> <span id="dog-happiness"></span> / 100</li>
+                    </ul>
+
+                    <div class="action-buttons">
+                        <button id="feed-btn">🍖 Feed</button>
+                        <button id="play-btn">🎾 Play</button>
+                        <button id="next-day-btn">🌅 Next Day</button>
+                    </div>
+
+                    <p id="action-message" class="action-message"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>

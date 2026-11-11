@@ -1,114 +1,261 @@
-/* 基础页面重置与布局 */
+/* ===== Reset and base styles ===== */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #eef2f7; /* 柔和的浅灰蓝背景 */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 1rem;
 }
 
-/* 顶部区域 */
 header {
-  background-color: #5a8df0;
-  color: #fff;
-  padding: 30px 16px;
-  text-align: center;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
 }
 
 header h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
 }
 
-.welcome {
-  font-size: 1.05rem;
-  max-width: 600px;
-  margin: 0 auto;
-  opacity: 0.9;
+header p {
+    font-size: 1rem;
+    color: #555;
 }
 
-/* 主内容区 - 窄屏居中限制 */
 main {
-  max-width: 600px; /* 限制最大宽度，使窄屏体验更好 */
-  margin: 0 auto;
-  padding: 24px 16px;
+    max-width: 1060px;
+    margin: 0 auto;
 }
 
-.encyclopedia h2 {
-  margin-bottom: 20px;
-  font-size: 1.6rem;
-  text-align: center;
-  color: #2c3e50;
+/* ===== Encyclopedia section ===== */
+#encyclopedia h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
 }
 
-/* 名片 (Card) 样式 */
+.breed-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
 .breed-card {
-  background-color: #ffffff;
-  border-radius: 16px;
-  padding: 20px;
-  margin-bottom: 24px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.breed-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
 }
 
 .breed-card img {
-  width: 160px;
-  height: 160px;
-  object-fit: contain;
-  margin-bottom: 16px;
-  background-color: #f8fafc;
-  border-radius: 50%; /* 圆形图片背景，更像名片 */
-  padding: 10px;
+    width: 100%;
+    height: auto;
+    max-height: 180px;
+    object-fit: contain;
+    margin-bottom: 1rem;
 }
 
 .breed-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 12px;
-  color: #5a8df0;
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
 }
 
-/* 介绍信息排版 */
-.breed-info {
-  width: 100%;
-  text-align: left;
+.breed-card ul {
+    list-style: none;
+    text-align: left;
+    font-size: 0.95rem;
 }
 
-.breed-info p {
-  margin-bottom: 8px;
-  font-size: 0.95rem;
+.breed-card li {
+    margin-bottom: 0.5rem;
 }
 
-.breed-info strong {
-  color: #555;
+/* ===== Adoption section ===== */
+#adoption {
+    margin-top: 3rem;
 }
 
-/* 底部 */
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.85rem;
-  color: #777;
+#adoption h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
 }
 
-/* 窄屏适配优化 */
+#adoption-form {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    max-width: 420px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#adoption-form p {
+    margin-bottom: 1rem;
+}
+
+#adoption-form label {
+    display: block;
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    margin-top: 0.8rem;
+}
+
+#adoption-form select,
+#adoption-form input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.error-message {
+    color: #d32f2f;
+    font-size: 0.9rem;
+    min-height: 1.2em;
+    margin-top: 0.5rem;
+    text-align: left;
+}
+
+#adopt-btn {
+    margin-top: 1rem;
+    padding: 0.6rem 2rem;
+    font-size: 1rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#adopt-btn:hover {
+    background-color: #388e3c;
+}
+
+/* ===== Dog status panel ===== */
+.status-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    max-width: 420px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.status-card img {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.status-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+}
+
+.status-card ul {
+    list-style: none;
+    text-align: left;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.status-card li {
+    margin-bottom: 0.4rem;
+}
+
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.action-buttons button {
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+}
+
+#feed-btn {
+    background-color: #ff9800;
+}
+
+#feed-btn:hover {
+    background-color: #f57c00;
+}
+
+#play-btn {
+    background-color: #2196f3;
+}
+
+#play-btn:hover {
+    background-color: #1976d2;
+}
+
+#next-day-btn {
+    background-color: #9c27b0;
+}
+
+#next-day-btn:hover {
+    background-color: #7b1fa2;
+}
+
+.action-message {
+    margin-top: 0.8rem;
+    font-size: 0.95rem;
+    color: #555;
+    min-height: 1.2em;
+}
+
+/* ===== Utility ===== */
+.hidden {
+    display: none;
+}
+
+/* ===== Responsive adjustments ===== */
 @media (max-width: 600px) {
-  header h1 { font-size: 1.6rem; }
-  .welcome { font-size: 0.95rem; }
-  .encyclopedia h2 { font-size: 1.3rem; }
-  .breed-card { padding: 16px; }
-  .breed-card img { width: 120px; height: 120px; }
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .breed-card {
+        padding: 1rem;
+    }
+
+    .breed-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .breed-card ul {
+        font-size: 0.9rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .action-buttons button {
+        width: 100%;
+    }
 }
